@@ -1,0 +1,14 @@
+---
+
+name: Arch makepkg
+description: Uses makepkg to build a package for Arch Linux
+inputs:
+  path:
+    description: "Path to directory containing PKGBUILD file"
+    required: true
+    default: ""
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - "${{ inputs.path }}"
